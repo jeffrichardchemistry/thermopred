@@ -8,6 +8,19 @@ Download the repository manually or via git:
 ```shell
 $ git clone https://github.com/jeffrichardchemistry/thermopred
 ```
+Enter the `thermopred` models directory and run the following command to unzip models:
+
+```shell
+$ cd ../thermopred/Thermopred/models
+$ tar -xzvf MLP_gibbs.sav.tar.gz && tar -xzvf RF_gibbs.sav.tar.gz && tar -xzvf XGB_gibbs.sav.tar.gz
+```
+
+and
+```shell
+$ cd ../thermopred/Thermopred/models_entalpie
+$ tar -xzvf MLP_gibbs_enthalpie.sav.tar.gz && tar -xzvf RF_gibbs_Enthalpie.sav.tar.gz && tar -xzvf XGB_gibbs_Enthalpie.sav.tar.gz
+```
+
 
 Enter the `thermopred` directory and run the following command to install the python package:
 
