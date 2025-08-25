@@ -1,6 +1,8 @@
 # Thermopred
 This repository contains the official data, algorithms, and ML models present in the paper "`AI-Enhanced Quantum Chemistry Dataset for Thermochemical Properties of API-Like Compounds and Their Degradants`".
 
+## We recommend using Python 3.10, as this version has been thoroughly tested with Thermopred.
+
 ## How to use
 
 Download the repository manually or via git:
@@ -8,19 +10,6 @@ Download the repository manually or via git:
 ```shell
 $ git clone https://github.com/jeffrichardchemistry/thermopred
 ```
-Enter the `thermopred` models directory and run the following command to unzip models:
-
-```shell
-$ cd ../thermopred/Thermopred/models
-$ tar -xzvf MLP_gibbs.sav.tar.gz && tar -xzvf RF_gibbs.sav.tar.gz && tar -xzvf XGB_gibbs.sav.tar.gz
-```
-
-and
-```shell
-$ cd ../thermopred/Thermopred/models_entalpie
-$ tar -xzvf MLP_gibbs_enthalpie.sav.tar.gz && tar -xzvf RF_gibbs_Enthalpie.sav.tar.gz && tar -xzvf XGB_gibbs_Enthalpie.sav.tar.gz
-```
-
 
 Enter the `thermopred` directory and run the following command to install the python package:
 
@@ -44,3 +33,9 @@ result_enthalpie = ee.predict(smiles)
 gfe = GibbsFreeEnergy()
 gfe.predict(smiles=smiles)
 ```
+
+You can also install this package directly from PyPI using:
+```shell
+pip install thermopred
+```
+

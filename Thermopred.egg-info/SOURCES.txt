@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+Thermopred/Enthalpie.py
+Thermopred/GibbsEnergy.py
+Thermopred/__init__.py
+Thermopred/utils.py
+Thermopred.egg-info/PKG-INFO
+Thermopred.egg-info/SOURCES.txt
+Thermopred.egg-info/dependency_links.txt
+Thermopred.egg-info/requires.txt
+Thermopred.egg-info/top_level.txt

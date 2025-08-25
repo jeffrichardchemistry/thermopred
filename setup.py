@@ -14,7 +14,7 @@ setup(
     description='A python package to predict some thermochemical properties.',
     long_description = description,
     long_description_content_type = "text/markdown",
-    packages=['Thermopred'],
+    packages=find_packages(),
     include_package_data=True,
     install_requires=['scikit-learn==1.3.2', 'pandas<=2.1.4', 'numpy<=1.26.4', 'rdkit==2023.9.6','xgboost==2.0.3'],#use this line in case of error in instalation
 	classifiers = [

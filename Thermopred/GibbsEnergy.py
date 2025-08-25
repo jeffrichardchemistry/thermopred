@@ -5,6 +5,7 @@ import numpy as np
 import pickle
 from rdkit import Chem
 from rdkit.Chem import AllChem
+from Thermopred.utils import get_model
 
 ABSOLUT_PATH = os.path.dirname(os.path.realpath(__file__))
 
@@ -39,12 +40,14 @@ class GibbsFreeEnergy():
         return fp
 
     def __loadModels(self):
-        modelspath = ABSOLUT_PATH+'/models'
-        pathfilenames = [modelspath+f'/{name}' for name in os.listdir(modelspath)]
-        pathfilenames = [modelpath for modelpath in pathfilenames if modelpath.endswith('.sav')]
+        filenames = ["RF_gibbs.sav", "MLP_gibbs.sav", "XGB_gibbs.sav"]
+        modelsLoaded = {}
+        for fname in filenames:
+            path = get_model(fname)
+            with open(path, "rb") as f:
+                model = pickle.load(f)
+                modelsLoaded[type(model).__name__] = model
 
-        # The names (Keys) are: 'XGBRegressor', 'MLPRegressor', 'RandomForestRegressor'
-        modelsLoaded = {type(pickle.load(open(path,'rb'))).__name__ : pickle.load(open(path,'rb')) for path in pathfilenames}
         return modelsLoaded
 
 if __name__ == '__main__':
